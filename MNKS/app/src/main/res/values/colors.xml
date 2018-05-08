@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DCD9CF</color>
+    <color name="colorPrimaryDark">#DCD9CF</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="Tab_bag">#DCD9CF</color>
+    <color name="line_bag">#6B5549</color>
+</resources>
