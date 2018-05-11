@@ -32,7 +32,7 @@ public class RetrofitUtils {
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
             @Override
             public void log(String message) {
-                Log.i("TAG",message);
+                //Log.i("TAG",message);
             }
         });
 

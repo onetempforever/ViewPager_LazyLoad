@@ -43,7 +43,6 @@ public abstract class BaseFragment extends Fragment{
             //数据加载完毕,恢复标记,防止重复加载
             isViewCreated = false;
             isUIVisible = false;
-
             Log.d("lazyLoad", "lazyLoad: +可见,加载数据");
         }
     }

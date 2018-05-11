@@ -10,12 +10,15 @@ import android.view.ViewGroup;
 
 import com.bawei.wzq.wzlibrary.view.XListView;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import git.example.dell.mnks.R;
+import git.example.dell.mnks.model.bean.EventMessage;
 import git.example.dell.mnks.view.adapter.MyAdapter;
 import git.example.dell.mnks.model.bean.WelfareBean;
 import git.example.dell.mnks.presenter.ShowPresenter;
@@ -68,9 +71,6 @@ public class F5 extends BaseFragment {
 
     }
 
-
-
-
     private void initData() {
         showPresenter = new ShowPresenter();
         showPresenter.getPresenterData(num+"", new git.example.dell.mnks.view.View() {
@@ -79,6 +79,8 @@ public class F5 extends BaseFragment {
                         final List<WelfareBean.ResultsBean> results = welfareBean.getResults();
 
                         xlv.setAdapter(new MyAdapter(getActivity(),results));
+                        //发送
+                        EventBus.getDefault().post(new EventMessage(results.get(1).getUrl()));
                     }
                     @Override
                     public void LoadErrorViewData(Throwable t) {
@@ -109,9 +111,6 @@ public class F5 extends BaseFragment {
                         //延迟关闭头部视图
                         myHandler.sendEmptyMessageDelayed(2,500);
                         }
-
-
-
 
                     @Override
                     public void onLoadMore() {

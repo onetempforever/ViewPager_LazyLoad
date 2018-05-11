@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 return TITLE.length;
             }
         });
+
     }
 
     private void setData() {

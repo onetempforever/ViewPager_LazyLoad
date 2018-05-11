@@ -11,6 +11,7 @@ import retrofit2.http.Path;
 
 public interface ApiService {
 
+
     @GET("data/福利/10/{page}")
     Flowable<WelfareBean> getWelfareData(@Path("page") String page);
 }
